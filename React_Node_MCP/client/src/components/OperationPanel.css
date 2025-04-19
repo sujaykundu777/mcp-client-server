@@ -1,0 +1,304 @@
+.operation-panel {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+/* Operation Selector Styles */
+.operation-selector,
+.operands-input,
+.operands-list {
+  margin-bottom: 20px;
+}
+
+.operation-selector label,
+.operands-input label,
+.operands-list label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 14px;
+}
+
+.operation-dropdown {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  font-size: 16px;
+  background-color: #f9f9f9;
+  margin-bottom: 8px;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 16px;
+}
+
+.operation-dropdown:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.operation-description {
+  font-size: 13px;
+  color: #666;
+  margin-top: 8px;
+  font-style: italic;
+  padding-left: 2px;
+}
+
+/* Operands Input Styles */
+.input-group {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.operand-input {
+  flex-grow: 1;
+  padding: 12px 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px 0 0 6px;
+  font-size: 16px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.operand-input:focus {
+  outline: none;
+  border-color: #2196f3;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.2);
+}
+
+.add-operand-btn {
+  padding: 0 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.add-operand-btn:hover {
+  background-color: #45a049;
+}
+
+.add-operand-btn:active {
+  transform: scale(0.98);
+}
+
+.input-error {
+  color: #f44336;
+  font-size: 13px;
+  margin-top: 5px;
+  padding-left: 2px;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Operands List Styles */
+.no-operands {
+  color: #999;
+  font-style: italic;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  text-align: center;
+  border: 1px dashed #ddd;
+}
+
+.operands {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  overflow: hidden;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #eee;
+}
+
+.operand-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-10px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.operand-item:last-child {
+  border-bottom: none;
+}
+
+.remove-operand-btn {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.remove-operand-btn:hover {
+  background-color: #d32f2f;
+}
+
+.remove-operand-btn:active {
+  transform: scale(0.9);
+}
+
+.clear-operands-btn {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.clear-operands-btn:hover {
+  background-color: #f57c00;
+}
+
+.clear-operands-btn:active {
+  transform: scale(0.98);
+}
+
+/* Calculate Button Styles */
+.calculate-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.calculate-btn:hover:not(.disabled) {
+  background-color: #1976d2;
+}
+
+.calculate-btn:active:not(.disabled) {
+  transform: scale(0.98);
+}
+
+.calculate-btn.disabled {
+  background-color: #bdbdbd;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Ripple Effect for Calculate Button */
+.calculate-btn:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.calculate-btn:not(.disabled):focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0) translate(-50%, -50%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20) translate(-50%, -50%);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .operation-panel {
+    padding: 15px;
+  }
+  
+  .operation-dropdown,
+  .operand-input,
+  .add-operand-btn {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  .calculate-btn {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .operand-item {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .operation-selector label,
+  .operands-input label,
+  .operands-list label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  
+  .operation-description {
+    font-size: 12px;
+  }
+  
+  .input-error {
+    font-size: 12px;
+  }
+  
+  .no-operands {
+    padding: 10px;
+    font-size: 13px;
+  }
+  
+  .operands {
+    max-height: 150px;
+  }
+}

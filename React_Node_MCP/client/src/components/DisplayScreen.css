@@ -1,0 +1,255 @@
+.display-screen {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.operation-display {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.current-operation, 
+.current-operands {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.operation-label,
+.operands-label {
+  font-weight: 500;
+  width: 80px;
+  color: #333;
+}
+
+.operation-value,
+.operands-value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result-display {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: background-color 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.result-display.success {
+  border-left-color: #4caf50;
+}
+
+.result-display.error {
+  background-color: #ffebee;
+  border-left-color: #f44336;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.error-icon {
+  margin-right: 8px;
+}
+
+.result-value {
+  color: #333;
+}
+
+/* Animation for calculating state */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.calculating {
+  animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 600px) {
+  .display-screen {
+    padding: 10px;
+  }
+  
+  .result-display {
+    font-size: 24px;
+    padding: 10px;
+    min-height: 50px;
+  }
+  
+  .current-operation, 
+  .current-operands {
+    font-size: 12px;
+  }
+  
+  .operation-label,
+  .operands-label {
+    width: 70px;
+  }
+}
+
+.display-screen {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.operation-display {
+  margin-bottom: 10px;
+  color: #666;
+  font-size: 14px;
+}
+
+.current-operation, 
+.current-operands {
+  margin-bottom: 5px;
+  display: flex;
+}
+
+.operation-label,
+.operands-label {
+  font-weight: 500;
+  width: 80px;
+  color: #333;
+}
+
+.operation-value,
+.operands-value {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.result-display {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: right;
+  padding: 15px;
+  background-color: white;
+  border-radius: 4px;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transition: background-color 0.3s;
+  border-left: 4px solid transparent;
+}
+
+.result-display.success {
+  border-left-color: #4caf50;
+}
+
+.result-display.error {
+  background-color: #ffebee;
+  border-left-color: #f44336;
+}
+
+.error-message {
+  color: #d32f2f;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.error-icon {
+  margin-right: 8px;
+}
+
+.result-value {
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .display-screen {
+    padding: 10px;
+  }
+  
+  .result-display {
+    font-size: 24px;
+    padding: 10px;
+    min-height: 50px;
+  }
+  
+  .current-operation, 
+  .current-operands {
+    font-size: 12px;
+  }
+  
+  .operation-label,
+  .operands-label {
+    width: 70px;
+  }
+}
+
+.display-screen {
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.operation-display {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+
+.result-display {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: right;
+  padding: 10px;
+  background-color: white;
+  border-radius: 4px;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 16px;
+  padding: 5px;
+}
+
+.result-value {
+  color: #333;
+}
+
+.error {
+  background-color: #ffebee;
+}
+
